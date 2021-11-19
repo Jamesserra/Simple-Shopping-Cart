@@ -18,6 +18,12 @@ let updateTotalPrice = function() {
       totalPriceCost.push(totalPrice);
       let totalCost = totalPriceCost.reduce(sum);
       $('#totalPrice').html(totalCost);
+       let temp = totalCost;
+       if(temp < totalCost) {
+        $('.test').attr('class', 'text-danger fas fa-angle-down');
+      } else {
+        $('.test').attr('class', 'text-success fas fa-angle-up');
+      }
     });
 };
 
@@ -34,8 +40,12 @@ $(document).ready(function() {
   });
 
   //Update based on quantity
+  let timeout;
   $(document).on('input', 'tr input', function () {
-    updateTotalPrice();
+    clearTimeout(timeout);
+    time = setTimeout(function() {
+      updateTotalPrice();
+    }, 1000);
   });
 
   //Add to Shopping Cart
@@ -49,7 +59,7 @@ $(document).ready(function() {
     '<td class="name">' + name + '</td>' +
     '<td class="cost">$<span>' + cost + '.00</span></td>' +
     '<td class="quantity">QTY <input type="number" value="'+ quantity + '"/></td>' +
-    '<td><button class="btn btn-light btn-md remove">remove</button></td>' +
+    '<td><button class="btn btn-danger btn-md remove"><i class="fas fa-times"></button></td>' +
     '<td class="totalCost"></td>' +
     '</tr>');
   
