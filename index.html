@@ -15,6 +15,48 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-      <h3>Hello World</h3>
+      <div class="container">
+        <h1 class="text-left">Shopping Cart</h1>
+        <div class="row">
+          <div class="col-12">
+          <table class="table table-responsive">
+            <tbody>
+              <tr>
+                <td class="name">Steak</td>
+                <td class="cost">$<span>25.00</span></td>
+                <td class="quantity">QTY <input type="number" value="5"/></td>
+                <td><button class="btn btn-light btn-md remove">remove</button></td>
+                <td class="totalCost"></td>
+              </tr>
+              <tr>
+                <td class="name">Salmon</td>
+                <td class="cost">$<span>60.00</span></td>
+                <td class="quantity">QTY <input type="number" value="3"/></td>
+                <td><button class="btn btn-light btn-md remove">remove</button></td>
+                <td class="totalCost"></td>
+              </tr>
+              <tr>
+                <td class="name">Chicken</td>
+                <td class="cost">$<span>10.00</span></td>
+                <td class="quantity">QTY <input type="number" value="8"/></td>
+                <td><button class="btn btn-light btn-md remove">remove</button></td>
+                <td class="totalCost"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="calculate">
+          <button class="btn mb-1 btn-primary btn-md">Calculate Cost</button></div>
+        </div>
+        <form class="col-12" id="addCart">
+          <input class="mx-2" name="name" type="text" placeholder="Name" required/>
+          <input class="mx-2" name="cost" type="number" placeholder="Cost" />
+          <input class="mx-4" name="quantity" type="number" placeholder="Quantity" />
+          <button class="btn mb-1 btn-success btn-md">Add</button>
+        </form>
+
+        <div class="col-12 col-md-6">
+          <h2>Total Price: $ <span id="totalPrice"></span></h2>
+        </div>
+      </div>
   </body>
 </html>
