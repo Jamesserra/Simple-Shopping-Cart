@@ -65,8 +65,8 @@ $(document).ready(function() {
   
     updateTotalPrice();
     $(this).children('[name=name]').val('');
-    $(this).children('[name=cost]').val('');
-    $(this).children('[name=quantity]').val('');
+    $(this).children('[name=cost]').val('0');
+    $(this).children('[name=quantity]').val('0');
   })
 });
 
