@@ -1,6 +1,6 @@
 let updateTotalCost = function(ele) {
   let cost = parseFloat($(ele).children('.cost').children('span').text());
-  let quantity = parseFloat($(ele).find('.quantity input').val());
+  let quantity = parseFloat($(ele).find('.quantity input').val()) || 0;
   let totalCost = cost * quantity;
 
   $(ele).children('.totalCost').html('$' + totalCost);
